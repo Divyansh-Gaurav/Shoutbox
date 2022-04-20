@@ -30,10 +30,11 @@ public class ShoutboxController {
 	}
 	
 	@PostMapping("/save")
-	public void saveUser(@RequestParam("firstName") String name, @RequestParam("mail") String mail, @RequestParam("lastName") String lastName, @RequestParam("city") String city) {
-		
+	public void saveUser(@RequestParam("firstName") String name, @RequestParam("mail") String mail,
+			@RequestParam("lastName") String lastName, @RequestParam("city") String city) {
+
 		userService.saveUser(new User(name, lastName, mail, city));
-		
+
 	}
 	
 	@PostMapping("update")
@@ -58,7 +59,7 @@ public class ShoutboxController {
 				System.out.println("mail updated");
 			}
 			userService.saveUser(user.get());
-				return "user updated";
+				return "****user updated****";
 		
 		} else
 			return "No userfound with id: " + userId;
